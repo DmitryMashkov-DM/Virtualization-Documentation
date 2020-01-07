@@ -1905,8 +1905,8 @@ You can use the fields below to configure the VHD or VHDX that you want to creat
                     }
 
                     If (( $DiskLayout -eq "UEFI" -and $BcdInVhd -eq "VirtualMachine" ) -or
-                          $DiskLayout -eq "WindowsToGo") -or
-                          $DiskLayout -eq "BIOS")
+                        ( $DiskLayout -eq "WindowsToGo" ) -or
+                        ( $DiskLayout -eq "BIOS" ))
                     {
                       # Retreive access path for System partition.
                         $systemPartition = Get-Partition -UniqueId $systemPartition.UniqueId
